@@ -4,7 +4,7 @@ A single-page web app to make, alter and store notes.
 
 ## 👀 Live demo
 
-**[Check it out here.](#)** You can change create a note, and update or remote a note.
+**[Check it out here.](#)** You can change create a note, view or remove a note.
 
 ## 🏁 Getting Started
 
