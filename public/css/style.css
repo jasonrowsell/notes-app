@@ -1,0 +1,12 @@
+#wrapper{
+    background-color: orange;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    border-radius: 30px;
+    margin-top: 5em;
+    max-width: 500px;
+    margin-bottom: 5em;
+  }
