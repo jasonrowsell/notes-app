@@ -1,12 +1,126 @@
-#wrapper {
-  background-color: orange;
-  color: black;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 1em;
-  padding-top: 1em;
-  border-radius: 30px;
-  margin-top: 5em;
-  max-width: 500px;
-  margin-bottom: 5em;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+li,
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+header {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #24252a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+}
+.logo {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: #edf0f1;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-links {
+  list-style: none;
+}
+button {
+  padding: 9px 25px;
+  background-color: rgb(207, 140, 53);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+button:hover {
+  background-color: rgba(207, 140, 53, 0.8);
+}
+.search_wrap {
+  width: 400px;
+}
+.search_wrap .search_box {
+  position: relative;
+  width: 350px;
+  height: 32px;
+}
+.search_wrap .search_box .input {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border-width: thin;
+  font-size: 18px;
+  color: aliceblue;
+}
+.search_wrap .search_box .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+.search_wrap .search_box .btn.btn_common .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: aliceblue;
+}
+.search_wrap .search_box .input {
+  padding-right: 80px;
+  border-radius: 50px;
+}
+.search_wrap .search_box .btn {
+  right: 0px;
+  border-radius: 50%;
+}
+.container {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+}
+.note-form {
+  display: flex;
+  margin-left: 180px;
+}
+.submit {
+  margin-left: 10px;
+  padding: 9px 25px;
+  background-color: rgb(235, 162, 66, 0.9);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.submit:hover {
+  margin-left: 10px;
+  padding: 9px 25px;
+  background-color: rgba(207, 142, 56, 0.9);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+textarea {
+  resize: both;
+  overflow: auto;
+  outline: none;
 }
