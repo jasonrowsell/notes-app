@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function displayNote() {
-    notes.innerText = note.getNote();
+    notes.innerText = note.abbreviate();
   }
 
   // textarea auto resize
