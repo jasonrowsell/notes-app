@@ -1,13 +1,13 @@
 class Note {
-  constructor(string) {
-    this.string = string;
+  constructor(text) {
+    this.text = text;
   }
 
   getNote() {
-    return this.string
+    return this.text;
   }
 
   abbreviate() {
-    return this.string.substr(0, 20) + '...';
+    return this.text.substr(0, 20) + '...';
   }
 }
