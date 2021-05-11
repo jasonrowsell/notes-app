@@ -23,7 +23,7 @@ cd notes-app
 http-server ./public
 ```
 
-At this point the application should be running on your machine at [http://127.0.0.1:8080](http://127.0.0.1:8080/)
+At this point the application should be running on your machine at [127.0.0.1:8080](http://127.0.0.1:8080/)
 
 ## Built Using
 
