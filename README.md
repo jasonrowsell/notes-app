@@ -16,7 +16,7 @@ Get a copy of the Note app running on your local machine (for playing around, te
 git clone git@github.com:jasonrowsell/notes-app
 ```
 
-open the html file from terminal
+run the app locally from terminal
 
 ```sh
 cd notes-app
