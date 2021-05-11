@@ -10,11 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
   localStorage.setItem('notes', JSON.stringify(notesArray));
   const data = JSON.parse(localStorage.getItem('notes'));
 
-  const listMaker = (text) => {
+  function listMaker(text) {
     const li = document.createElement('li');
     li.textContent = text;
     ul.appendChild(li);
-  };
+  }
+
+  // loads list
+
+  data.forEach((item) => {
+    note = new Note(item);
+    listMaker(note.abbreviate());
+  });
+
+  // creates note
 
   noteForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -24,11 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     note = new Note(noteText.value);
     listMaker(note.abbreviate());
     noteText.value = '';
-  });
-
-  data.forEach((item) => {
-    note = new Note(item.text);
-    listMaker(note.abbreviate(note.text));
   });
 
   // textarea auto resize
