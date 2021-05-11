@@ -20,10 +20,10 @@ open the html file from terminal
 
 ```sh
 cd notes-app
-open public/index.html
+http-server ./public
 ```
 
-At this point the application should be running on your machine at file://Users/username/notes-app/public/index.html (or equivalent)
+At this point the application should be running on your machine at [http://127.0.0.1:8080](http://127.0.0.1:8080/)
 
 ## Built Using
 
