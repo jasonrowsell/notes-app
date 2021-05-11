@@ -16,14 +16,14 @@ Get a copy of the Note app running on your local machine (for playing around, te
 git clone git@github.com:jasonrowsell/notes-app
 ```
 
-open the html file from terminal
+run the app locally from terminal
 
 ```sh
 cd notes-app
-open public/index.html
+http-server ./public
 ```
 
-At this point the application should be running on your machine at file://Users/username/notes-app/public/index.html (or equivalent)
+At this point the application should be running on your machine at [127.0.0.1:8080](http://127.0.0.1:8080/)
 
 ## Built Using
 
@@ -38,7 +38,7 @@ At this point the application should be running on your machine at file://Users/
 The project challenge requires the programmer to:
 
 - Create a single-page web app.
-- Build the program without using any external libraries, such as jQuery, Jest, Node.
+- Build the program without using any external libraries, such as jQuery, Jest.
 - Request and use data from an external API.
 - Develop the app through TDD with a your own test library in JavaScript.
 
