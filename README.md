@@ -79,6 +79,7 @@ So that I can stay organised
 ### Sequence Diagrams
 
 **Adding a new note**
+Once the text value has been inputted and submitted to the interface, this text is pushed into an array. The array is then set to be the value of a hash which is then stored in localstorage. This hash will be retrieved at the start of each session and evaluated to display each note (covered below). To display the created note during the current session, a note instance is created with the parameter of the text value. The abbreviate function is called on the note object and the value returned from this is appended to a list tag in the index.html. This is then rendered for the user.
 ![Adding a new note](./public/images/addingnote.png)
 **Viewing all notes**
 ![Viewing all notes](./public/images/displaynotes.png)
