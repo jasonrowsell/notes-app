@@ -81,8 +81,6 @@ So that I can stay organised
 **Adding a new note**
 ![Adding a new note](./public/images/addingnote.png)
 **Viewing all notes**
-![Viewing all notes](./public/images/deletenote.png)
-**Deleting a note**
-![Deleting a note](./public/images/deletenote.png)
+![Viewing all notes](./public/images/displaynotes.png)
 **Vewing a full note**
 ![Vewing a full note](./public/images/fulldescription.png)

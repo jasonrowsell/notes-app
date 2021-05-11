@@ -123,3 +123,7 @@ textarea {
   overflow: auto;
   outline: none;
 }
+.notes li {
+  text-align: center;
+  color: black;
+}

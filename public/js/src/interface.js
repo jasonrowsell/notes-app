@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   let noteForm = document.querySelector('#note-form'),
-    ul = document.querySelector('ul'),
+    ul = document.querySelector('.notes'),
     noteText = document.querySelector('#note-text'),
-    notes = document.querySelector('#notes'),
     notesArray = localStorage.getItem('notes')
       ? JSON.parse(localStorage.getItem('notes'))
       : [];
@@ -10,13 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   localStorage.setItem('notes', JSON.stringify(notesArray));
   const data = JSON.parse(localStorage.getItem('notes'));
 
-  function listMaker(text) {
-    const li = document.createElement('li');
-    li.textContent = text;
-    ul.appendChild(li);
-  }
-
-  // loads list
+  // loads notes
 
   data.forEach((item) => {
     note = new Note(item);
@@ -34,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     listMaker(note.abbreviate());
     noteText.value = '';
   });
+
+  function listMaker(text) {
+    const li = document.createElement('li');
+    li.textContent = text;
+    ul.appendChild(li);
+  }
 
   // textarea auto resize
 
