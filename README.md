@@ -38,7 +38,7 @@ At this point the application should be running on your machine at file://Users/
 The project challenge requires the programmer to:
 
 - Create a single-page web app.
-- Build the program without using any external libraries, such as jQuery, Jest, Node.
+- Build the program without using any external libraries, such as jQuery, Jest.
 - Request and use data from an external API.
 - Develop the app through TDD with a your own test library in JavaScript.
 
