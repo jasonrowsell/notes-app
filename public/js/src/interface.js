@@ -21,13 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     notesArray.push(noteText.value);
     localStorage.setItem('notes', JSON.stringify(notesArray));
-    listMaker(noteText.value);
+    note = new Note(noteText.value);
+    listMaker(note.abbreviate());
     noteText.value = '';
   });
 
   data.forEach((item) => {
     note = new Note(item.text);
-    listMaker(note.abbreviate());
+    listMaker(note.abbreviate(note.text));
   });
 
   // textarea auto resize
