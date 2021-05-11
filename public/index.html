@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/style.css" type="text/css">
-  <title>Notes</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <title>Notes</title>
+  </head>
   <body>
-    <div id="wrapper" class="container">
-      <div class="row justify-content-center">
+    <header>
+      <ul class="logo">
+        Notes
+      </ul>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <div class="search_wrap">
+              <div class="search_box">
+                <input type="text" class="input" placeholder="search..." />
+                <div class="btn btn_common">
+                  <i class="fas fa-search"></i>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="cta"><button>Login</button></a>
+    </header>
+    <div class="container">
       <h1>Your notes</h1>
-      </div>
-      </br>
-      <div id="wrapper" class="container">
-        <div class="row justify-content-center">
-        <form id="note-form">
-            <input id="note-text" type="text" placeholder="Input text here"></input>
-            <input type="submit"></input>
-          </form>
-      </div>
-
-      <div id="wrapper" class="container">
-        <div class="row justify-content-center">
-      <p id="notes">
-      </p>
-      </div>
-        <script src="js/src/note.js"></script>
+      <p id="notes"></p>
+        <form id="note-form" class="note-form">
+          <textarea id="note-text" rows="2" placeholder="Input text here"></textarea>
+          <input class="submit" type="submit" value="Add note"></input>
+        </form>
+    </div>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="js/src/note.js"></script>
     <script src="js/src/interface.js"></script>
   </body>
 </html>
