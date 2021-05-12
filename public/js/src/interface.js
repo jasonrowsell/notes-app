@@ -25,12 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('notes', JSON.stringify(notesArray));
     note = new Note(noteText.value);
     listMaker(note.abbreviate());
+
     noteText.value = '';
   });
 
   function listMaker(text) {
     const li = document.createElement('li');
-    li.textContent = text;
+    var a = document.createElement('a');
+    a.textContent = text;
+    a.href = '#';
+    li.appendChild(a);
     ul.appendChild(li);
   }
 
