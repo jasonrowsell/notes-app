@@ -1,8 +1,14 @@
 "use strict";
 
-function expect() {
+function expect(a) {
   return {
-    toEqual: function(){}
+    toEqual: function(b){
+      if (a == b) {
+        console.log("Pass")
+      } else {
+        console.log("Fail")
+      }
+    }
   }
 }
 
@@ -18,3 +24,4 @@ it('2 + 2 is equal to 4', function(){
 it('2 + 3 is equal to 4', function(){
     expect(2 + 3).toEqual(4)   
 })
+
