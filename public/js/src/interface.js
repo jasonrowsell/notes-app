@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let noteForm = document.querySelector('#note-form'),
     ul = document.querySelector('.notes'),
     noteText = document.querySelector('#note-text'),
+    container = document.querySelector('.container'),
+    fullNote = document.querySelector('.full-note'),
     notesArray = localStorage.getItem('notes')
       ? JSON.parse(localStorage.getItem('notes'))
       : [];
@@ -13,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   data.forEach((item) => {
     note = new Note(item);
-    listMaker(note.abbreviate());
+    listMaker(note);
   });
 
   // creates note
@@ -24,18 +26,33 @@ document.addEventListener('DOMContentLoaded', () => {
     notesArray.push(noteText.value);
     localStorage.setItem('notes', JSON.stringify(notesArray));
     note = new Note(noteText.value);
-    listMaker(note.abbreviate());
-
-    noteText.value = '';
+    listMaker(note);
   });
 
-  function listMaker(text) {
-    const li = document.createElement('li');
-    var a = document.createElement('a');
-    a.textContent = text;
-    a.href = '#';
-    li.appendChild(a);
+  function listMaker(note) {
+    let li = document.createElement('li'),
+      link = document.createElement('a'),
+      description = `${note.abbreviate()}`;
+
+    (link.textContent = description),
+      (link.href = '#'),
+      (link.id = description);
+
+    link.addEventListener('click', (e) => {
+      displayNote(note);
+      e.preventDefault();
+    });
+
+    li.appendChild(link);
     ul.appendChild(li);
+
+    noteText.value = '';
+  }
+
+  function displayNote(note) {
+    let text = note.getNote();
+    container.style.display = 'none';
+    fullNote.textContent = text;
   }
 
   // textarea auto resize
