@@ -22,12 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   noteForm.addEventListener('submit', function (e) {
     e.preventDefault();
+    submitNote();
+  });
 
+  function submitNote() {
     notesArray.push(noteText.value);
     localStorage.setItem('notes', JSON.stringify(notesArray));
     note = new Note(noteText.value);
     listMaker(note);
-  });
+  }
+
+  function displayNote(note) {
+    let text = note.getNote();
+    container.style.display = 'none';
+    fullNote.textContent = text;
+  }
 
   function listMaker(note) {
     let li = document.createElement('li'),
@@ -47,12 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ul.appendChild(li);
 
     noteText.value = '';
-  }
-
-  function displayNote(note) {
-    let text = note.getNote();
-    container.style.display = 'none';
-    fullNote.textContent = text;
   }
 
   // textarea auto resize

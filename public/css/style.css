@@ -127,3 +127,12 @@ textarea {
   text-align: center;
   color: black;
 }
+ul {
+  list-style-type: none;
+}
+.full-note {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+}
