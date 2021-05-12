@@ -88,3 +88,13 @@ Once the text value has been inputted and submitted to the interface, this text 
 ![Viewing all notes](./public/images/displaynotes.png)
 **Vewing a full note**
 ![Vewing a full note](./public/images/fulldescription.png)
+
+### Code Snippets
+
+**_Viewing a note's full description_**
+
+Without creating paths to new pages in order to click on a note to view it's full description, information must be appended to the current page. When designing a function to create a note, we appended an anchor element `a` to a list element `li`, to an unordered list `ul`. The anchor tag provides opportunity to structure a DOM event, to initiate an appendment of the note's full description to the body.
+
+![Viewing a full note](./public/images/codesnippet.png)
+
+Having this DOM event inside the function allows each link to reference its own note object passed into the function, this irradicates necessity for GET requests and alternate routes.
