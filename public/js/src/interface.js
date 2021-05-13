@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   container2.style.display = 'none';
 
-  getEmoji('test');
-
   // loads notes
 
   data.forEach((item) => {
@@ -32,9 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function submitNote() {
-    notesArray.push(noteText.value);
+    var text = getEmoji(noteText.value);
+    console.log(text);
+    notesArray.push(text);
     localStorage.setItem('notes', JSON.stringify(notesArray));
-    note = new Note(noteText.value);
+    note = new Note(text);
     listMaker(note);
   }
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function listMaker(note) {
     let li = document.createElement('li'),
       link = document.createElement('a'),
-      description = `${note.abbreviate()}`;
+      description = `${note.getNote()}`;
 
     (link.textContent = description),
       (link.href = '#'),
@@ -80,9 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        let note = submitNote(data.emojified_text);
-        displayNote(note);
+        let emojiText = data.emojified_text;
+        return emojiText;
       });
+    console.log(emojiText);
   }
 
   // textarea auto resize
