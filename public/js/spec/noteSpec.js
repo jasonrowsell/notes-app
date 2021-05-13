@@ -1,7 +1,7 @@
 'use strict';
 
 let note = new Note('noteislongerthan20characters');
-let shortNote = new Note('a short note')
+let shortNote = new Note('a short note');
 
 it('returns the text', () => {
   expect(note.getNote()).toEqual('noteislongerthan20characters');

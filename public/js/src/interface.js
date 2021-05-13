@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const data = JSON.parse(localStorage.getItem('notes'));
 
   container2.style.display = 'none';
+
+  getEmoji('test');
+
   // loads notes
 
   data.forEach((item) => {
@@ -31,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function submitNote() {
     notesArray.push(noteText.value);
     localStorage.setItem('notes', JSON.stringify(notesArray));
-    note = new Note(noteText.value);
     listMaker(note);
   }
 
@@ -64,6 +66,22 @@ document.addEventListener('DOMContentLoaded', () => {
     ul.appendChild(li);
 
     noteText.value = '';
+  }
+
+  function getEmoji(text) {
+    let text_json = JSON.parse(`{ "text": "${text}"}`);
+    fetch('https://makers-emojify.herokuapp.com/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(text_json),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        let note = submitNote(data.emojified_text);
+        displayNote(note);
+      });
   }
 
   // textarea auto resize
