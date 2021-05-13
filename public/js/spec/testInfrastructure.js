@@ -14,7 +14,7 @@ function expect(actual) {
         console.log(`PASS`);
       } else {
         console.log(
-          `FAIL: expected ${actual} to be and instance of ${expected}`
+          `FAIL: expected ${actual} to be an instance of ${expected}`
         );
       }
     },
