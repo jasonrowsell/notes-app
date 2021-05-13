@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container = document.querySelector('.container'),
     container2 = document.querySelector('.container2'),
     fullNote = document.querySelector('.full-note'),
-    backButton = document.querySelector('#back-button')
+    backButton = document.querySelector('#back-button'),
     notesArray = localStorage.getItem('notes')
       ? JSON.parse(localStorage.getItem('notes'))
       : [];
@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
     container2.style.display = 'block';
     fullNote.textContent = text;
     backButton.addEventListener('click', (e) => {
-    container.style.display = 'block';
-    container2.style.display = 'none';
-    })
+      container.style.display = 'block';
+      container2.style.display = 'none';
+    });
   }
 
   function listMaker(note) {
