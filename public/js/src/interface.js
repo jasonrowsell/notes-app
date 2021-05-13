@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function submitNote() {
     notesArray.push(noteText.value);
     localStorage.setItem('notes', JSON.stringify(notesArray));
+    note = new Note(noteText.value);
     listMaker(note);
   }
 
