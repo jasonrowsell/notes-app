@@ -26,12 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   noteForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    submitNote();
+    getEmoji(noteText.value);
   });
 
-  function submitNote() {
-    var text = getEmoji(noteText.value);
-    console.log(text);
+  function submitNote(text) {
     notesArray.push(text);
     localStorage.setItem('notes', JSON.stringify(notesArray));
     note = new Note(text);
@@ -80,9 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        let emojiText = data.emojified_text;
-        return emojiText;
+        data.emojified_text;
+        submitNote(data.emojified_text);
       });
+    console.log(data.emojified_text);
   }
 
   // textarea auto resize
