@@ -29,22 +29,28 @@ document.addEventListener('DOMContentLoaded', () => {
     getEmoji(noteText.value);
   });
 
+  function getEmoji(text) {
+    let text_json = JSON.parse(`{ "text": "${text}"}`);
+    fetch('https://makers-emojify.herokuapp.com/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(text_json),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        data.emojified_text;
+        submitNote(data.emojified_text);
+      });
+    console.log(data.emojified_text);
+  }
+
   function submitNote(text) {
     notesArray.push(text);
     localStorage.setItem('notes', JSON.stringify(notesArray));
     note = new Note(text);
     listMaker(note);
-  }
-
-  function displayNote(note) {
-    let text = note.getNote();
-    container.style.display = 'none';
-    container2.style.display = 'block';
-    fullNote.textContent = text;
-    backButton.addEventListener('click', (e) => {
-      container.style.display = 'block';
-      container2.style.display = 'none';
-    });
   }
 
   function listMaker(note) {
@@ -67,21 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
     noteText.value = '';
   }
 
-  function getEmoji(text) {
-    let text_json = JSON.parse(`{ "text": "${text}"}`);
-    fetch('https://makers-emojify.herokuapp.com/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(text_json),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        data.emojified_text;
-        submitNote(data.emojified_text);
-      });
-    console.log(data.emojified_text);
+  function displayNote(note) {
+    let text = note.getNote();
+    container.style.display = 'none';
+    container2.style.display = 'block';
+    fullNote.textContent = text;
+    backButton.addEventListener('click', (e) => {
+      container.style.display = 'block';
+      container2.style.display = 'none';
+    });
   }
 
   // textarea auto resize
