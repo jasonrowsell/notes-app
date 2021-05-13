@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let emojiText = data.emojified_text;
         return emojiText;
       });
-    console.log(emojiText);
   }
 
   // textarea auto resize
