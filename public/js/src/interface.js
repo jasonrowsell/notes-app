@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ul = document.querySelector('.notes'),
     noteText = document.querySelector('#note-text'),
     container = document.querySelector('.container'),
+    container2 = document.querySelector('.container2'),
     fullNote = document.querySelector('.full-note'),
+    backButton = document.querySelector('#back-button')
     notesArray = localStorage.getItem('notes')
       ? JSON.parse(localStorage.getItem('notes'))
       : [];
@@ -11,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   localStorage.setItem('notes', JSON.stringify(notesArray));
   const data = JSON.parse(localStorage.getItem('notes'));
 
+  container2.style.display = 'none';
   // loads notes
 
   data.forEach((item) => {
@@ -35,7 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function displayNote(note) {
     let text = note.getNote();
     container.style.display = 'none';
+    container2.style.display = 'block';
     fullNote.textContent = text;
+    backButton.addEventListener('click', (e) => {
+    container.style.display = 'block';
+    container2.style.display = 'none';
+    })
   }
 
   function listMaker(note) {
